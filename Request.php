@@ -23,7 +23,7 @@ Class Request {
      * @param  callable $callback Callback function to call after request
      * @return void
      */
-    public function getRequest($url, Closure $callback = false) {
+    public function getRequest($url, Closure $callback = null) {
         $ch = curl_init($url);
         curl_setopt_array(
             $ch,
@@ -40,7 +40,7 @@ Class Request {
         $this->httpInfo = curl_getinfo($ch);
         curl_close($ch);
 
-        if ($callback) {
+        if (null !== $callback) {
             call_user_func_array($callback, [$this->httpResponse, $this->httpInfo]);
         }
     }
@@ -52,7 +52,7 @@ Class Request {
      * @param  callable $callback Callback function to call after request
      * @return void
      */
-    public function postRequest($url, array $payload, Closure $callback = false) {
+    public function postRequest($url, array $payload, Closure $callback = null) {
         $ch = curl_init($url);
         curl_setopt_array(
             $ch,
@@ -71,7 +71,7 @@ Class Request {
         $this->httpInfo = curl_getinfo($ch);
         curl_close($ch);
 
-        if ($callback) {
+        if (null !== $callback) {
             call_user_func_array($callback, [$this->httpResponse, $this->httpInfo]);
         }
     }
