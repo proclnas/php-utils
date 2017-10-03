@@ -23,7 +23,7 @@ Class Request {
      * @param  callable $callback Callback function to call after request
      * @return void
      */
-    public function getRequest($url, Closure $callback = null) {
+    public function getRequest($url, \Closure $callback = null) {
         $ch = curl_init($url);
         curl_setopt_array(
             $ch,
@@ -52,7 +52,7 @@ Class Request {
      * @param  callable $callback Callback function to call after request
      * @return void
      */
-    public function postRequest($url, array $payload, Closure $callback = null) {
+    public function postRequest($url, array $payload, \Closure $callback = null) {
         $ch = curl_init($url);
         curl_setopt_array(
             $ch,
