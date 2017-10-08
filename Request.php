@@ -42,7 +42,10 @@ Class Request {
 
         if (null !== $callback) {
             call_user_func_array($callback, [$this->httpResponse, $this->httpInfo]);
+            return;
         }
+
+        return $this;
     }
 
     /**
@@ -73,7 +76,10 @@ Class Request {
 
         if (null !== $callback) {
             call_user_func_array($callback, [$this->httpResponse, $this->httpInfo]);
+            return;
         }
+
+        return $this;
     }
 
     /**
