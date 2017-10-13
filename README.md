@@ -7,6 +7,11 @@ A serie of php util files
 git clone http://github.com/proclnas/php-utils.git
 ```
 
+## Available Utils:
+- Request
+- File
+- Network
+
 ## Request (Http utils)
 
 Usage:
@@ -64,4 +69,41 @@ File::saveFile('output.txt', 'content');
 // Save to file (Append content)
 File::saveFile('output.txt', 'content', true);
 
+```
+
+## Network (Network utils)
+
+- Generate ip range using generator (Avoid extensive memory usage)
+
+Usage:
+```php
+require 'Network.php';
+
+use Util\Network;
+
+foreach (Network::genIp('192.168.0.1', '192.168.1.255') as $ip) {
+    echo $ip . PHP_EOL;
+}
+```
+
+output:
+
+```
+...
+192.168.0.1
+...
+192.168.1.243
+192.168.1.244
+192.168.1.245
+192.168.1.246
+192.168.1.247
+192.168.1.248
+192.168.1.249
+192.168.1.250
+192.168.1.251
+192.168.1.252
+192.168.1.253
+192.168.1.254
+192.168.1.255
+...
 ```
