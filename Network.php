@@ -5,8 +5,8 @@ namespace Util;
 class Network {
 	/**
 	 * Generate ip range
-	 * @param  string $ipA [description]
-	 * @param  string $ipB [description]
+	 * @param  string $ipA InitialIp
+	 * @param  string $ipB FinalIp
 	 * @return \Generator
 	 */
 	public static function genIp($ipA, $ipB) {
